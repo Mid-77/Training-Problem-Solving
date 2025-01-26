@@ -1,0 +1,39 @@
+/* Footer Styles */
+#footer {
+    background-color: var(--background-color);
+    padding: 3rem 0;
+    margin-top: auto;
+}
+
+#footer h5 {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+#footer ul li {
+    margin-bottom: 0.75rem;
+}
+
+#footer ul li a {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+#footer ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+#footer .social-links a {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+#footer .social-links a:hover {
+    color: var(--primary-color);
+}
+
+#footer hr {
+    margin: 2rem 0;
+    opacity: 0.1;
+}

@@ -1,0 +1,183 @@
+/* Global Styles */
+:root {
+    --primary-color: #4338ca;
+    --secondary-color: #60a5fa;
+    --background-color: #ffffff;
+    --text-color: #0ea5e9;  /* أزرق لامع */
+    --light-blue: #38bdf8;  /* أزرق فاتح لامع */
+    --dark-blue: #0284c7;   /* أزرق غامق لامع */
+    --text-light: #7dd3fc;  /* أزرق فاتح جداً لامع */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    overflow-x: hidden;
+}
+
+/* Wave Background */
+.wave-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+    z-index: -1;
+}
+
+/* Text styles */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.text-white {
+    color: var(--text-light) !important;
+}
+
+#hero h1, 
+#hero p, 
+#hero .btn-outline-primary,
+.navbar-nav .nav-link,
+.navbar-brand {
+    color: var(--text-light) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+/* Card styles */
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card .card-title {
+    color: var(--dark-blue);
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+}
+
+.card .list-unstyled a {
+    color: var(--text-color);
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px rgba(14, 165, 233, 0.2);
+}
+
+.card .list-unstyled a:hover {
+    color: var(--light-blue);
+    text-shadow: 0 0 10px rgba(14, 165, 233, 0.4);
+}
+
+/* Footer styles */
+footer {
+    background-color: var(--background-color) !important;
+}
+
+footer h5 {
+    color: var(--dark-blue);
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+}
+
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px rgba(14, 165, 233, 0.2);
+}
+
+footer a:hover {
+    color: var(--light-blue);
+    text-shadow: 0 0 10px rgba(14, 165, 233, 0.4);
+}
+
+footer .social-links a {
+    color: var(--dark-blue);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+}
+
+footer .social-links a:hover {
+    color: var(--light-blue);
+    transform: scale(1.1);
+    text-shadow: 0 0 15px rgba(14, 165, 233, 0.5);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--light-blue);
+    border-color: var(--light-blue);
+    color: var(--dark-blue);
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--text-light);
+    color: var(--text-light);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Scroll to Top Button */
+#scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+#scrollToTop:hover {
+    background-color: var(--dark-blue);
+}
+
+/* Container max-width adjustments */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}

@@ -1,0 +1,40 @@
+/* Main Content Styles */
+#main {
+    padding: 4rem 0;
+}
+
+#main .card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+#main .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#main .card-body {
+    padding: 2rem;
+}
+
+#main .card i {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+#main .card-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+#main .list-unstyled li {
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+#main .list-unstyled i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}

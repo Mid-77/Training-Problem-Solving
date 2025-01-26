@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Training & Problem Solving</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../Web_Libraries/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../../Web_Libraries/fontawesome-free-6.7.2-web/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <i class="fas fa-graduation-cap"></i>
+                    Training & Problem Solving
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="courses.html">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="resources.html">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 mb-4">About Us</h1>
+                <p class="lead mb-4">
+                    We are dedicated to providing high-quality educational resources and training materials
+                    to help students and professionals enhance their skills and solve complex problems.
+                </p>
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <i class="fas fa-graduation-cap fa-3x mb-3 text-primary"></i>
+                        <h3>Our Mission</h3>
+                        <p>To provide accessible and quality education to everyone.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-users fa-3x mb-3 text-primary"></i>
+                        <h3>Our Team</h3>
+                        <p>Experienced educators and industry professionals.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <i class="fas fa-star fa-3x mb-3 text-primary"></i>
+                        <h3>Our Values</h3>
+                        <p>Excellence, innovation, and continuous learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="footer"></footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="../../../Web_Libraries/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Load Footer Component -->
+    <script>
+        async function loadFooter() {
+            try {
+                const response = await fetch('../components/footer.html');
+                const html = await response.text();
+                document.getElementById('footer').innerHTML = html;
+            } catch (error) {
+                console.error('Error loading footer:', error);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadFooter);
+    </script>
+</body>
+</html>

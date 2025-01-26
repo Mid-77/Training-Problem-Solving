@@ -1,0 +1,19 @@
+# IDE and Editor files
+.vscode/
+.idea/
+*.sublime-*
+*.swp
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Dependencies
+node_modules/
+vendor/

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Training & Problem Solving</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../../Web_Libraries/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../../Web_Libraries/fontawesome-free-6.7.2-web/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <i class="fas fa-graduation-cap"></i>
+                    Training & Problem Solving
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="courses.html">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="resources.html">Resources</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <h1 class="text-center mb-5">Learning Resources</h1>
+        
+        <div class="row g-4">
+            <!-- E-Books Section -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-book-reader fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="card-title text-center">E-Books</h3>
+                        <p class="card-text">Access our comprehensive collection of digital textbooks and reference materials.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check me-2"></i>Downloadable PDFs</li>
+                            <li><i class="fas fa-check me-2"></i>Interactive Content</li>
+                            <li><i class="fas fa-check me-2"></i>Multiple Formats</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Browse E-Books</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Lessons -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-video fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="card-title text-center">Video Lessons</h3>
+                        <p class="card-text">Watch expert-led video tutorials and lectures on various subjects.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check me-2"></i>HD Quality</li>
+                            <li><i class="fas fa-check me-2"></i>Closed Captions</li>
+                            <li><i class="fas fa-check me-2"></i>Practice Exercises</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Watch Videos</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Tools -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-tools fa-3x text-primary"></i>
+                        </div>
+                        <h3 class="card-title text-center">Practice Tools</h3>
+                        <p class="card-text">Interactive tools and calculators to enhance your learning experience.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check me-2"></i>Scientific Calculator</li>
+                            <li><i class="fas fa-check me-2"></i>Formula Sheet</li>
+                            <li><i class="fas fa-check me-2"></i>Practice Tests</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary w-100">Use Tools</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="footer"></footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="../../../Web_Libraries/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Load Footer Component -->
+    <script>
+        async function loadFooter() {
+            try {
+                const response = await fetch('../components/footer.html');
+                const html = await response.text();
+                document.getElementById('footer').innerHTML = html;
+            } catch (error) {
+                console.error('Error loading footer:', error);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadFooter);
+    </script>
+</body>
+</html>
