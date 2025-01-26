@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Links - Training & Problem Solving</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .links-container {
+            margin-top: 3rem;
+        }
+        .link-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .category-badge {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            background: #e9ecef;
+            color: #495057;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .price-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(45deg, #4338ca, #60a5fa);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <i class="fas fa-graduation-cap fa-2x me-2"></i>
+                <span class="brand-text">Training & Problem Solving</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="interactive-learning.html">
+                            <i class="fas fa-laptop-code me-1"></i>Interactive Learning
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="manage-links.html">
+                            <i class="fas fa-cog me-1"></i>Manage Links
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <!-- Add New Link Form -->
+        <div class="form-container">
+            <h2 class="text-center mb-4">Add New Link</h2>
+            <form id="addLinkForm">
+                <div class="mb-3">
+                    <label for="siteName" class="form-label">Site Name</label>
+                    <input type="text" class="form-control" id="siteName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="siteUrl" class="form-label">URL</label>
+                    <input type="url" class="form-control" id="siteUrl" required>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="category" class="form-label">Category</label>
+                        <select class="form-select" id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="Study Tools">Study Tools</option>
+                            <option value="Developer Tools">Developer Tools</option>
+                            <option value="Programming Languages">Programming Languages</option>
+                            <option value="Training & Problem Solving">Training & Problem Solving</option>
+                            <option value="Complete Projects">Complete Projects</option>
+                            <option value="Algorithms">Algorithms</option>
+                            <option value="Data Structures">Data Structures</option>
+                            <option value="Databases">Databases</option>
+                            <option value="News">News</option>
+                            <option value="Podcast">Podcast</option>
+                            <option value="YouTube">YouTube</option>
+                            <option value="Platforms">Platforms</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="icon" class="form-label">Icon</label>
+                        <select class="form-select" id="icon" required>
+                            <option value="">Select Icon</option>
+                            <option value="fas fa-graduation-cap">Education</option>
+                            <option value="fas fa-code">Code</option>
+                            <option value="fas fa-book">Book</option>
+                            <option value="fas fa-laptop-code">Programming</option>
+                            <option value="fas fa-project-diagram">Project</option>
+                            <option value="fas fa-sitemap">Algorithm</option>
+                            <option value="fas fa-database">Database</option>
+                            <option value="fas fa-newspaper">News</option>
+                            <option value="fas fa-podcast">Podcast</option>
+                            <option value="fab fa-youtube">YouTube</option>
+                            <option value="fas fa-desktop">Platform</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="siteType" id="freeSite" value="free" checked>
+                        <label class="form-check-label" for="freeSite">
+                            <i class="fas fa-gift me-1"></i>Free Site
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="siteType" id="paidSite" value="paid">
+                        <label class="form-check-label" for="paidSite">
+                            <i class="fas fa-dollar-sign me-1"></i>Paid Site
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="fas fa-plus-circle me-1"></i>Add Link
+                </button>
+            </form>
+        </div>
+
+        <!-- Added Links Section -->
+        <div class="links-container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Added Links</h2>
+                <select class="form-select" style="width: auto;" id="categoryFilter">
+                    <option value="All Categories">All Categories</option>
+                    <option value="Study Tools">Study Tools</option>
+                    <option value="Developer Tools">Developer Tools</option>
+                    <option value="Programming Languages">Programming Languages</option>
+                    <option value="Training & Problem Solving">Training & Problem Solving</option>
+                    <option value="Complete Projects">Complete Projects</option>
+                    <option value="Algorithms">Algorithms</option>
+                    <option value="Data Structures">Data Structures</option>
+                    <option value="Databases">Databases</option>
+                    <option value="News">News</option>
+                    <option value="Podcast">Podcast</option>
+                    <option value="YouTube">YouTube</option>
+                    <option value="Platforms">Platforms</option>
+                </select>
+            </div>
+            <div class="row" id="linksContainer">
+                <!-- Links will be added dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="interactive-learning.html">Interactive Learning</a></li>
+                        <li><a href="manage-links.html">Manage Links</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="me-2"><i class="fab fa-github"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2025 Training & Problem Solving. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/linkManager.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const linkManager = new LinkManager();
+            const form = document.getElementById('addLinkForm');
+            const linksContainer = document.getElementById('linksContainer');
+            const categoryFilter = document.getElementById('categoryFilter');
+
+            // Display all links initially
+            displayLinks();
+
+            // Handle form submission
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const link = {
+                    title: document.getElementById('siteName').value,
+                    url: document.getElementById('siteUrl').value,
+                    category: document.getElementById('category').value,
+                    icon: document.getElementById('icon').value,
+                    description: document.getElementById('description').value,
+                    isPaid: document.querySelector('input[name="siteType"]:checked').value === 'paid'
+                };
+
+                linkManager.addLink(link);
+                form.reset();
+                displayLinks();
+            });
+
+            // Handle category filter change
+            categoryFilter.addEventListener('change', displayLinks);
+
+            // Function to display links
+            function displayLinks() {
+                const selectedCategory = categoryFilter.value;
+                const links = selectedCategory === 'All Categories' 
+                    ? linkManager.getAllLinks()
+                    : linkManager.getLinksByCategory(selectedCategory);
+
+                linksContainer.innerHTML = links.length === 0 
+                    ? `<div class="col-12 text-center">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>No links available in this category
+                        </div>
+                       </div>`
+                    : links.map(link => `
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card h-100 link-card">
+                                <div class="card-body">
+                                    <span class="price-tag">${link.isPaid ? 'Paid' : 'Free'}</span>
+                                    <h3 class="card-title">
+                                        <a href="${link.url}" target="_blank" class="text-decoration-none">
+                                            <i class="${link.icon} me-2"></i>${link.title}
+                                        </a>
+                                    </h3>
+                                    <p class="card-text">${link.description}</p>
+                                    <span class="category-badge">
+                                        <i class="fas fa-tag me-1"></i>${link.category}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+            }
+        });
+    </script>
+</body>
+</html>
